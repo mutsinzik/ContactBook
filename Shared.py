@@ -60,4 +60,4 @@ def delete_contact():
         print("Contact was deleted")
     
     else:
-        print("Contact doesn't exist in database")
+        print("Contact doesn't exist in Contact book")
