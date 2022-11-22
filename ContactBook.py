@@ -1,4 +1,4 @@
-from Shared import save_contact, display_contact, edit_contact, delete_contact
+from Shared import save_contact, display_contact, edit_contact, delete_contact, search_contact
 
 
 def main():
@@ -10,7 +10,8 @@ def main():
         2. Display Contacts
         3. Edit Contacts
         4. Delete Contacts
-        5. Exit  
+        5. Search Contact details
+        6. Exit  
         """)
 
     choice = int(input('> '))
@@ -28,7 +29,15 @@ def main():
         delete_contact()
 
     if choice == 5:
-        pass
+        search_contact()
+        
+    if choice == 6:
+        quit()
+        
+    else:
+        print("Please enter a choice between 1 & 6")
+        input('Press Enter to continue')
+        main()
 
 
 main()

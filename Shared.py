@@ -61,3 +61,18 @@ def delete_contact():
     
     else:
         print("Contact doesn't exist in Contact book")
+        
+
+def search_contact():
+    
+    search_contact = input("Please enter the name of the contact you are searching for: ")
+    search_query = 'SELECT * FROM contact_table WHERE fname=%s'
+    mycursor.execute(search_query, (search_contact,))
+    records = mycursor.fetchall()
+
+    print("First Name\t\t\tLast Name\t\t\tAddress\t\t\tPhone Number")
+    print("----------\t\t\t---------\t\t\t-------\t\t\t------------")
+    
+    for first_name, last_name, address, phone_number in records:
+        print(f"{first_name}\t\t\t\t{last_name}\t\t\t{address}\t\t\t{phone_number}")
+    
